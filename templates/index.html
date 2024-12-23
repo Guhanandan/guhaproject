@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: url('https://5.imimg.com/data5/SELLER/Default/2022/9/XE/HT/DR/89844398/agricultural-consultancy-services-500x500.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for readability */
+        }
+
+        .form-box {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            width: 400px;
+        }
+
+        .form-box h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #27ae60;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="text"]:focus {
+            border-color: #27ae60;
+            outline: none;
+            box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>MARKET TRACK: MONITORING COST CHANGES ACROSS 
+              AGRICULTURE PRODUCT CHANNELS
+              </h1>
+            <form method="POST" action="/predict">
+                <label for="Nitrogen">Nitrogen:</label>
+                <input type="text" id="Nitrogen" name="Nitrogen" required>
+                
+                <label for="Phosporus">Phosphorus:</label>
+                <input type="text" id="Phosporus" name="Phosporus" required>
+                
+                <label for="Potassium">Potassium:</label>
+                <input type="text" id="Potassium" name="Potassium" required>
+                
+                <label for="Temperature">Temperature:</label>
+                <input type="text" id="Temperature" name="Temperature" required>
+                
+                <label for="Humidity">Humidity:</label>
+                <input type="text" id="Humidity" name="Humidity" required>
+                
+                <label for="pH">pH:</label>
+                <input type="text" id="pH" name="pH" required>
+                
+                <label for="Rainfall">Rainfall:</label>
+                <input type="text" id="Rainfall" name="Rainfall" required>
+                
+                <button type="submit">Predict</button>
+            </form>
+            {% if result %}
+            <h2>{{ result }}</h2>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
